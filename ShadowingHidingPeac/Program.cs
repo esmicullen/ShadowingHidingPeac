@@ -8,6 +8,30 @@ namespace ShadowingHidingPeac
 {
     internal class Program
     {
+        class Animal
+        {
+            public virtual void Eat()
+            {
+                Console.WriteLine("냠냠 먹습니다.");
+            }
+        }
+
+        class Dog : Animal 
+        { 
+            public void Eat()
+            {
+                Console.WriteLine("촵촵 먹습니다");
+            }
+        }
+
+        class Cat : Animal
+        {
+            public override void Eat()
+            {
+                Console.WriteLine("뇸뇸 먹습니다");
+            }
+        }
+
         class Parent
         {
             public int varoable = 273;
@@ -48,6 +72,15 @@ namespace ShadowingHidingPeac
 
             child.Method2();
             p.Method2();
+
+            List<Animal> list = new List<Animal>()
+            {
+                new Dog(), new Cat(), new Dog(), new Cat(),
+                new Dog(), new Cat(), new Dog(), new Cat()
+            };
+            foreach (var item in list) {
+                item.Eat();
+            }
         }
     }
 }
