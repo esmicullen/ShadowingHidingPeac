@@ -15,12 +15,20 @@ namespace ShadowingHidingPeac
             {
                 Console.WriteLine("부모의 메소드");
             }
+            public virtual void Method2() 
+            { 
+                Console.WriteLine("부모의 메소드"); 
+            }
         }
 
         class Child : Parent 
         {
             public new string varoable = "shadowing";
             public new void Method()
+            {
+                Console.WriteLine("자식의 메소드");
+            }
+            public override void Method2() 
             {
                 Console.WriteLine("자식의 메소드");
             }
@@ -37,6 +45,9 @@ namespace ShadowingHidingPeac
 
             child.Method();
             p.Method();
+
+            child.Method2();
+            p.Method2();
         }
     }
 }
