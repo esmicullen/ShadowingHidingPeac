@@ -11,11 +11,19 @@ namespace ShadowingHidingPeac
         class Parent
         {
             public int varoable = 273;
+            public void Method()
+            {
+                Console.WriteLine("부모의 메소드");
+            }
         }
 
         class Child : Parent 
         {
             public new string varoable = "shadowing";
+            public new void Method()
+            {
+                Console.WriteLine("자식의 메소드");
+            }
         }
         public static int number = 10;
         static void Main(string[] args)
@@ -27,6 +35,8 @@ namespace ShadowingHidingPeac
             Parent p = new Parent();
             Console.WriteLine(p.varoable);
 
+            child.Method();
+            p.Method();
         }
     }
 }
